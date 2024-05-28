@@ -1,1 +1,0 @@
-AÑADE ESTA CARPETA (META-INF) A TARGET/CLASSES en caso de problemas con jacoco
