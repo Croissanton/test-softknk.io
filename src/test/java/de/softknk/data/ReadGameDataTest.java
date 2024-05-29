@@ -75,9 +75,8 @@ public class ReadGameDataTest {
     @DisplayName("When a data file does not exist, the game should start with default values.")
     public void readData_WhenDataFileDoesNotExist_ReturnsDefaults() throws Exception {
         File testFile = new File("non-existing-file.txt");
-        MockedStatic<DataFile> mockedStatic = Mockito.mockStatic(DataFile.class);
 
-        try {
+        try (MockedStatic<DataFile> mockedStatic = Mockito.mockStatic(DataFile.class)) {
             // Mock the static method DataFile.dataFile() to return the temporary file
             mockedStatic.when(DataFile::dataFile).thenReturn(testFile);
 
@@ -95,10 +94,9 @@ public class ReadGameDataTest {
             assertEquals("0", dataList.get(4), "Fifth element should be '0'");
             assertEquals("0", dataList.get(5), "Sixth element should be '0'");
             assertEquals("0", dataList.get(6), "Seventh element should be '0'");
-        } finally {
-            // Ensure the static mock is closed
-            mockedStatic.close();
+
         }
+        // Ensure the static mock is closed
 
         // The cleanup is handled in the @AfterEach method
     }

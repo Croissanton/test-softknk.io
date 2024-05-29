@@ -50,7 +50,7 @@ public class OperationTest {
         assertEquals(expectedLevel, obtainedLevel);
     }
 
-    /*@Test
+    @Test
     @DisplayName("Test canBuyLevel() method when player can buy level")
     public void canBuyLevel_WhenPlayerCanBuyLevel_ReturnTrueAndIncreaseLevel() {
         // Act
@@ -78,7 +78,7 @@ public class OperationTest {
         // Assert
         assertEquals(expectedResult, obtainedResult);
         assertEquals(expectedLevel, obtainedLevel);
-    }*/
+    }
 
     @Test
     @DisplayName("Test setLevel() method when level is positive")

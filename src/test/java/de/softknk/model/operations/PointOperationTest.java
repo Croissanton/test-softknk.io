@@ -31,9 +31,10 @@ public class PointOperationTest {
     @Test
     @DisplayName("Test doOperation() method")
     public void doOperation_WhenCalled_IncreaseScoreValue() {
+        Point.initScoreValue(1);
         pointOperation.doOperation();
 
-        int expectedValue = 1;
+        int expectedValue = 2;
         int obtainedValue = Point.scoreValue();
 
         assertEquals(expectedValue, obtainedValue);
